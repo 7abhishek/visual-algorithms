@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -19,11 +18,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const gridContainerSizeXS = 12
+const gridContainerSizeSM = 12
 const gridContainerSize = 6
+
 
 const App = () => {
   const classes = useStyles()
-  const array = [4,5,64,3,2,14,45,67,32,1,22,49,63,23,8,7]
+  const array = [4,5,64,3,2,14,45,67,32,1,22,49,63,23,8,7,34,23,21,9,45]
   const data = array.map(num => { 
     return {number: num}
   })
@@ -32,13 +34,13 @@ const App = () => {
   return (
     <div className="App">
       <h1>Sorting visuals</h1>
-      <Grid container spacing={3}>
-        <Grid item xs={gridContainerSize} sm={gridContainerSize} md={gridContainerSize} lg={gridContainerSize}>
+      <Grid container spacing={1}>
+        <Grid item xs={gridContainerSizeXS} sm={gridContainerSizeSM} md={gridContainerSize} lg={gridContainerSize}>
           <Paper className={classes.paper}>
             <SelectionSortComponent inputData={data} delayInMs={delay}/>
           </Paper>
         </Grid>
-        <Grid item xs={gridContainerSize} sm={gridContainerSize} md={gridContainerSize} lg={gridContainerSize}>
+        <Grid item xs={gridContainerSizeSM} sm={gridContainerSizeSM} md={gridContainerSize} lg={gridContainerSize}>
           <Paper className={classes.paper}>
             <BubbleSortComponent inputData={data} delayInMs={delay}/>
           </Paper>
