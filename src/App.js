@@ -12,9 +12,10 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    width:"100%"
   },
 }));
 
@@ -33,8 +34,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Sorting visuals</h1>
-      <Grid container spacing={1}>
+      <h1>visual-algorithms</h1>
+      <Grid container spacing={3}>
         <Grid item xs={gridContainerSizeXS} sm={gridContainerSizeSM} md={gridContainerSize} lg={gridContainerSize}>
           <Paper className={classes.paper}>
             <SelectionSortComponent inputData={data} delayInMs={delay}/>
