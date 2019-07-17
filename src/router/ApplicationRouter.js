@@ -1,18 +1,20 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom"
+import { BrowserRouter as Router, HashRouter, Route, Redirect } from "react-router-dom"
 import Sorting from '../components/Sorting'
 import {Grid, makeStyles} from '@material-ui/core'
 
 export const ApplicationRouter = (props) => {
     console.log("ApplicationRouter props", props)
     return (
-        <Router>
+        <HashRouter basename={process.env.PUBLIC_URL}>
+        <Router basename={process.env.PUBLIC_URL}>
             {props.children}
             <Route path="/" render={() => (<Redirect to="/sorting" />)}/>
             <Route path="/sorting" exact component={Sorting} />
             <Route path="/trees" exact component={NotImplemented} />
             <Route path="/fun" exact component={NotImplemented} />
         </Router>
+        </HashRouter>
     )
 }
 
