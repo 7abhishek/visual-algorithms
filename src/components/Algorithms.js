@@ -29,7 +29,6 @@ const GridItemSize = 4
 
 export const Algorithms = (props) => {
     const classes = useStyles()
-    console.log("Algorithms props ", props);
 
     return (
         <Grid container className={classes.root} spacing={2}>

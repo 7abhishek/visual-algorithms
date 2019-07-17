@@ -1,12 +1,11 @@
 import React from 'react'
-import { BrowserRouter as Router, HashRouter, Route, Redirect } from "react-router-dom"
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom"
 import Sorting from '../components/Sorting'
 import {Grid, makeStyles} from '@material-ui/core'
 
 export const ApplicationRouter = (props) => {
-    console.log("ApplicationRouter props", props)
+    
     return (
-        <HashRouter basename={process.env.PUBLIC_URL}>
         <Router basename={process.env.PUBLIC_URL}>
             {props.children}
             <Route path="/" render={() => (<Redirect to="/sorting" />)}/>
@@ -14,7 +13,6 @@ export const ApplicationRouter = (props) => {
             <Route path="/trees" exact component={NotImplemented} />
             <Route path="/fun" exact component={NotImplemented} />
         </Router>
-        </HashRouter>
     )
 }
 
@@ -35,7 +33,7 @@ const NotImplemented = () => {
         <React.Fragment>
             <Grid container className={classes.container}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} className={classes.center}>
-                    <img alt="cat feeling shy" src="/static/images/Not_Implemented.jpg" /> 
+                    <img alt="cat feeling shy" src={`${process.env.PUBLIC_URL}/static/images/Not_Implemented.jpg`} /> 
                 </Grid>
             </Grid>
                  
