@@ -37,7 +37,7 @@ export const Algorithms = (props) => {
                 <Paper className={classes.block}>
                     <Grid container>
                         <Grid item xs={12} md={12} lg={12}>
-                         <Avatar alt="Sorting" src="/static/images/sorting2.png" className={classes.avatar} />
+                         <Avatar alt="Sorting" src={`${process.env.PUBLIC_URL}/static/images/sorting2.png`} className={classes.avatar} />
                         </Grid>
                         <Grid item className={classes.block} xs={12} md={12} lg={12}>
                           <Link to="/sorting" className={classes.linkstyle}> <Button className={classes.link}> Sorting </Button></Link>
@@ -50,7 +50,7 @@ export const Algorithms = (props) => {
                 <Paper className={classes.block}>
                     <Grid container>
                         <Grid item xs={12} md={12} lg={12}>
-                         <Avatar alt="Sorting" src="/static/images/trees.png" className={classes.avatar} />
+                         <Avatar alt="Sorting" src={`${process.env.PUBLIC_URL}/static/images/trees.png`} className={classes.avatar} />
                         </Grid>
                         <Grid item className={classes.block} xs={12} md={12} lg={12}>
                           <Link to={`/trees`} className={classes.linkstyle}><Button className={classes.link}>Trees</Button></Link>
@@ -63,7 +63,7 @@ export const Algorithms = (props) => {
                 <Paper className={classes.block}>
                     <Grid container>
                         <Grid item xs={12} md={12} lg={12}>
-                         <Avatar alt="Sorting" src="/static/images/fun.png" className={classes.avatar} />
+                         <Avatar alt="Sorting" src={`${process.env.PUBLIC_URL}/static/images/fun.png`} className={classes.avatar} />
                         </Grid>
                         <Grid item className={classes.block} xs={12} md={12} lg={12}>
                         <Link to="/fun" className={classes.linkstyle}><Button className={classes.link}>fun</Button></Link>
