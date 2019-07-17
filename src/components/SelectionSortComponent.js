@@ -1,16 +1,13 @@
 import React, {useState} from 'react'
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  } from 'recharts';
+    ResponsiveContainer} from 'recharts';
 import { Button, makeStyles, Grid } from '@material-ui/core';
 
 
 const useStyles = makeStyles(theme => ({
     chart :{
-        marginTop: 5, 
-        marginRight: 30, 
-        marginLeft: 20, 
-        marginBottom: 5,
+        width:"100%"
     }
 }))
 
@@ -49,9 +46,10 @@ export const SelectionSortComponent = (props) => {
     }
 
     return (
-        <Grid container className={classes.chart}> 
-        <Grid item>        
-           <BarChart width={500} height={300} data={data}
+        <Grid container > 
+        <Grid item className={classes.chart}>
+        <ResponsiveContainer width={"100%"} height={300}>        
+           <BarChart  data={data}
         margin={{
           top: 5, right: 30, left: 20, bottom: 5,
         }}>
@@ -60,8 +58,9 @@ export const SelectionSortComponent = (props) => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="number" fill="#616161" />
+        <Bar dataKey="number" fill="#45969b" />
       </BarChart>
+      </ResponsiveContainer>
         <Button color="primary" variant="outlined" onClick={selectionSort(Array.from(data),0,1, data[0].number, 0)}> Selection Sort </Button> 
         </Grid>                 
         </Grid>

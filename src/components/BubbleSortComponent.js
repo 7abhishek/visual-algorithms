@@ -1,15 +1,12 @@
 import React, {useState} from 'react'
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  } from 'recharts';
+     ResponsiveContainer} from 'recharts';
 import { Button , makeStyles, Grid} from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     chart :{
-        marginTop: 5, 
-        marginRight: 30, 
-        marginLeft: 20, 
-        marginBottom: 5,
+        width:"100%"
     }
 }))
 
@@ -48,19 +45,21 @@ export const BubbleSortComponent = (props) => {
     }
 
     return (
-        <Grid container className={classes.chart}>
-        <Grid item>
-        <BarChart width={500} height={300} data={data}
+        <Grid container>
+        <Grid item className={classes.chart}>
+        <ResponsiveContainer width={"100%"} height={300}> 
+        <BarChart data={data}
         margin={{
             top: 5, right: 30, left: 20, bottom: 5,
           }}>
-        <CartesianGrid strokeDasharray="1 1" />
-        <XAxis dataKey="number" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="number" fill="#616161" />
-      </BarChart>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="number" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="number" fill="#ad1d45" />
+        </BarChart>
+        </ResponsiveContainer>
       <Button color="primary" variant="outlined" onClick={bubbleSort(Array.from(data), 0,1)}> Bubble Sort </Button>
       </Grid>               
         </Grid>
