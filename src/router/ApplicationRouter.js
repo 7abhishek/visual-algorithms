@@ -32,7 +32,7 @@ const NotImplemented = () => {
         <React.Fragment>
             <Grid container className={classes.container}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} className={classes.center}>
-                    <img alt="cat feeling shy" src="/images/Not_Implemented.jpg" /> 
+                    <img alt="cat feeling shy" src="/static/images/Not_Implemented.jpg" /> 
                 </Grid>
             </Grid>
                  
