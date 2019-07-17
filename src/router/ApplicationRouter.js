@@ -4,6 +4,7 @@ import Sorting from '../components/Sorting'
 import {Grid, makeStyles} from '@material-ui/core'
 
 export const ApplicationRouter = (props) => {
+    console.log("ApplicationRouter props", props)
     return (
         <Router>
             {props.children}

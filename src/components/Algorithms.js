@@ -27,8 +27,9 @@ const useStyles = makeStyles(theme => ({
 const GridItemSizeSM = 6
 const GridItemSize = 4
 
-export const Algorithms = () => {
+export const Algorithms = (props) => {
     const classes = useStyles()
+    console.log("Algorithms props ", props);
 
     return (
         <Grid container className={classes.root} spacing={2}>
@@ -52,7 +53,7 @@ export const Algorithms = () => {
                          <Avatar alt="Sorting" src="/static/images/trees.png" className={classes.avatar} />
                         </Grid>
                         <Grid item className={classes.block} xs={12} md={12} lg={12}>
-                          <Link to="/trees" className={classes.linkstyle}><Button className={classes.link}>Trees</Button></Link>
+                          <Link to={`/trees`} className={classes.linkstyle}><Button className={classes.link}>Trees</Button></Link>
                         </Grid>                                        
                     </Grid>
                 </Paper>
